@@ -1,0 +1,42 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nicollassilva/tauri-v2-json-schema/main/tauri.conf.schema.json",
+  "productName": "ChatNovel",
+  "version": "1.1.0",
+  "identifier": "com.chatnovel.app",
+  "build": {
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "ChatNovel",
+        "width": 1060,
+        "height": 720,
+        "minWidth": 860,
+        "minHeight": 560,
+        "decorations": false,
+        "center": true,
+        "visible": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": [
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "embedBootstrapper"
+      },
+      "nsis": {
+        "installMode": "currentUser"
+      }
+    }
+  }
+}
